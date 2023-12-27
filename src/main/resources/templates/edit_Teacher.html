@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Student Form</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        form {
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+<form th:action="@{'/updated_student/' + ${student.tEmail}}" th:object="${student}" method="post">
+        <h2>Update Student</h2>
+        <label for="firstName">Teacher Name:</label>
+        <input type="text" id="tName" name="tName" th:field="${student.tName}" required>
+        
+        <label for="department"><strong>Department</strong></label>
+			<select id="tDept" name="tDept" required>
+				<option value="cse">Computer Science and Engineering</option>
+				<option value="ict">Information and Communication Technology</option>
+				<option value="te">Textile Engineering</option>
+				<option value="me">Mechanical Engineering</option>
+				<option value="esrm">Environmental Science and Resource Management</option>
+				<option value="cps">Criminology and Police Science</option>
+				<option value="ftns">Food Technology and Nutritional Science</option>
+				<option value="bge">Biotechnology and Genetic Engineering</option>
+				<option value="bmb">Biochemistry and Molecular Biology</option>
+				<option value="pharmacy">Pharmacy</option>
+				<option value="chemistry">Chemistry</option>
+				<option value="mathematics">Mathematics</option>
+				<option value="physics">Physics</option>
+				<option value="statistics">Statistics</option>
+				<option value="business-admin">Business Administration</option>
+				<option value="accounting">Accounting</option>
+				<option value="management">Management</option>
+				<option value="economics">Economics</option>
+				<option value="english">English</option>
+			</select>
+                
+        <label for="email">Phone:</label>
+        <input type="text" id="tPhone" name="tPhone" th:field="${student.tPhone}" required>
+        
+        <input type="submit" value="Update">
+    </form>
+</body>
+</html>

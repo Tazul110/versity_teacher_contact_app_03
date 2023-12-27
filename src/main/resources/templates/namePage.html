@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Teacher Management</title>
+<style>
+    /* Styles for the navigation bar */
+    .navbar {
+        background-color: #333;
+        overflow: hidden;
+    }
+    /* Style for the navigation bar buttons */
+    .navbar a {
+        float: left;
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+    }
+    /* Style for button hover effect */
+    .navbar a:hover {
+        background-color: #ddd;
+        color: black;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+
+    h1 {
+        text-align: center;
+        margin-top: 40px;
+        color: #333;
+    }
+
+    form {
+        max-width: 400px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+        display: block;
+        margin-bottom: 8px;
+        color: #333;
+    }
+
+    input[type="text"],
+    select,
+    input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-size: 16px;
+    }
+
+    input[type="submit"] {
+        background-color: #76B808;
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #76B808;
+    }
+</style>
+
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/home">Home</a>
+        <a href="/Show_all_Teachers">Show All Teachers</a>
+        <a href="/createAccount">Add Teacher</a>
+        <a href="/name">Search</a>
+    </nav>
+
+    <h1>Search by Name</h1>
+    <form action="findbyname" method="get">
+        <label for="name">Enter Name:</label>
+        <input type="text" id="name" name="name" required>
+        <input type="submit" value="Search">
+    </form>
+    
+
+    <h1>Search by Department</h1>
+    <form action="findbydept" method="get">
+        <label for="department"><strong>Department</strong></label>
+        <select id="dept" name="dept" required>
+            <option value="cse">Computer Science and Engineering</option>
+            <option value="ict">Information and Communication Technology</option>
+				<option value="te">Textile Engineering</option>
+				<option value="me">Mechanical Engineering</option>
+				<option value="esrm">Environmental Science and Resource Management</option>
+				<option value="cps">Criminology and Police Science</option>
+				<option value="ftns">Food Technology and Nutritional Science</option>
+				<option value="bge">Biotechnology and Genetic Engineering</option>
+				<option value="bmb">Biochemistry and Molecular Biology</option>
+				<option value="pharmacy">Pharmacy</option>
+				<option value="chemistry">Chemistry</option>
+				<option value="mathematics">Mathematics</option>
+				<option value="physics">Physics</option>
+				<option value="statistics">Statistics</option>
+				<option value="business-admin">Business Administration</option>
+				<option value="accounting">Accounting</option>
+				<option value="management">Management</option>
+				<option value="economics">Economics</option>
+				<option value="english">English</option>
+            <!-- Add other options here -->
+        </select>
+        <input type="submit" value="Search">
+    </form>
+</body>
+</html>

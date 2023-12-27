@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Teacher Information Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f4f4f4;
+    }
+
+    .form-container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 400px;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="url"] {
+      width: 100%;
+      padding: 8px;
+      border-radius: 3px;
+      border: 1px solid #ccc;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="tel"]:focus,
+    input[type="url"]:focus {
+      outline: none;
+      border-color: #57b846;
+    }
+
+    small {
+      font-size: 0.8em;
+      color: #888;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #57b846;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #4CAF50;
+    }
+    
+    
+   
+  </style>
+</head>
+<body>
+	
+
+  <div class="form-container">
+    <h2>Teacher Information</h2>
+    <form action="/Created_teacher_account" method="post" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="teacherName">Teacher's Name:</label>
+        <input type="text" id="teacherName" name="teacherName" required>
+      </div>
+      <div class="form-group">
+        
+        <label for="department"><strong>Department</strong></label>
+			<select id="department" name="department" required>
+				<option value="cse">Computer Science and Engineering</option>
+				<option value="ict">Information and Communication Technology</option>
+				<option value="te">Textile Engineering</option>
+				<option value="me">Mechanical Engineering</option>
+				<option value="esrm">Environmental Science and Resource Management</option>
+				<option value="cps">Criminology and Police Science</option>
+				<option value="ftns">Food Technology and Nutritional Science</option>
+				<option value="bge">Biotechnology and Genetic Engineering</option>
+				<option value="bmb">Biochemistry and Molecular Biology</option>
+				<option value="pharmacy">Pharmacy</option>
+				<option value="chemistry">Chemistry</option>
+				<option value="mathematics">Mathematics</option>
+				<option value="physics">Physics</option>
+				<option value="statistics">Statistics</option>
+				<option value="business-admin">Business Administration</option>
+				<option value="accounting">Accounting</option>
+				<option value="management">Management</option>
+				<option value="economics">Economics</option>
+				<option value="english">English</option>
+			</select>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{11}" required>
+        <small>Format: 10 digits</small>
+      </div>
+      <div class="form-group">
+       
+        <label for="image"><strong>Upload an Image</strong></label>
+		<input type="file" id="image" name="image" accept="image/*" required>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</body>
+</html>
